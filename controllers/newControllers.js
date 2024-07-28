@@ -1,4 +1,4 @@
-const messages = require("../routes/index").messages;
+const messages = require("../utils/messages");
 
 module.exports = {
   get: (req, res, next) => {
