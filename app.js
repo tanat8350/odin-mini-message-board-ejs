@@ -9,6 +9,17 @@ const newRouter = require("./routes/new");
 
 const app = express();
 
+const RateLimit = require("express-rate-limit");
+const limiter = RateLimit({
+  windowMs: 60000, // 1 min
+  max: 20,
+});
+app.use(limiter);
+const compression = require("compression");
+app.use(compression());
+const helmet = require("helmet");
+app.use(helmet());
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
