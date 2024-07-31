@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p><a href='/'>Home</a></p>
-    <form method='POST' action='/new'>
-      <div>
-        <label for='user'>User name: </label>
-        <input id='user' type='text' name='user' />
-      </div>
-      <div>
-        <label for='text'>Message: </label>
-        <input id='text' type='text' name='text' />
-      </div>
-      <button type='submit'>Submit</button>
-    </form>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p><a href='/'>Home</a></p>
+  <form method='POST' action='/new'>
+    <div>
+      <label for='username'>Username: </label>
+      <input id='username' type='text' name='username' />
+    </div>
+    <div>
+      <label for='message'>Message: </label>
+      <input id='message' type='text' name='message' />
+    </div>
+    <button type='submit'>Submit</button>
+  </form>
+</body>
+
 </html>

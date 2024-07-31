@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>User: <%= message.user %></p>
-    <p>Added date: <%= message.added %></p>
-    <p>Message: <%= message.text %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>User: <%= message.username %>
+  </p>
+  <p>Added date: <%= new Date(message.timestamp).toLocaleString() %>
+  </p>
+  <p>Message: <%= message.message %>
+  </p>
+</body>
+
 </html>

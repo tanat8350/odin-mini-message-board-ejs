@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p><a href='/new'>New post</a></p>
-    <% messages.map((item, index) => { %>
-      <% const dateFormatted = new Date(item.added).toLocaleString() %>
-      <p>[<%= dateFormatted %>, <%= item.user %>] &nbsp;<%= item.text %>
-        <a href=<%= '/message/' + index %> target='_blank'>Open in new tab</a></p>
-    <% }) %>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
+  <p><a href='/new'>New post</a></p>
+  <% messages.map((item, index)=> { %>
+    <% const dateFormatted=new Date(item.timestamp).toLocaleString() %>
+      <p>[<%= dateFormatted %>, <%= item.username %>] &nbsp;<%= item.message %>
+              <a href=<%='/message/' + item.id %> target='_blank'>Open in new tab</a></p>
+      <% }) %>
+</body>
+
 </html>

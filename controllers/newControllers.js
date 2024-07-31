@@ -1,16 +1,13 @@
-const messages = require("../utils/messages");
+const asyncHandler = require('express-async-handler');
+const queries = require('../db/queries');
 
 module.exports = {
   get: (req, res, next) => {
-    res.render("new", { title: "Create new message" });
+    res.render('new', { title: 'Create new message' });
   },
 
-  post: (req, res, next) => {
-    messages.push({
-      user: req.body.user,
-      text: req.body.text,
-      added: new Date(),
-    });
-    res.redirect("/");
-  },
+  post: asyncHandler(async (req, res, next) => {
+    await queries.insertMessages(req.body.username, req.body.message);
+    res.redirect('/');
+  }),
 };
